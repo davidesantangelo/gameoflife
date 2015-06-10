@@ -2,15 +2,15 @@
 class LifeController < ApplicationController
   before_action :init, only: [:index, :run]
 
-	def index
+  def index
     @@life = Life.new(@cols, @rows)
-	end
+  end
 
   def run
     cells = []
-    if params[:load] == "true"
+    if params[:load] == 'true'
       params[:cells].to_hash.values.each do |col, row|
-        cells.push([col.to_i,row.to_i])
+        cells.push([col.to_i, row.to_i])
       end
       @@life.load cells
     end

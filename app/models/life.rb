@@ -2,28 +2,29 @@ class Life
   attr_accessor :grid, :cols, :rows
 
   def initialize(cols, rows)
-    @cols, @rows = cols, rows
+    @cols = cols
+    @rows = rows
     @grid = load_grid
   end
 
   def load(cells)
-    cells.each {|y,x| grid[y][x] = 1}
+    cells.each { |y, x| grid[y][x] = 1 }
   end
 
-  def neighbors_count(y,x)
-    neighbors(y,x).select {|cell| cell == 1}.size
+  def neighbors_count(y, x)
+    neighbors(y, x).count { |cell| cell == 1 }
   end
 
   def execute
     new_grid = load_grid
     grid.each_with_index do |row, y|
       row.each_with_index do |cell, x|
-        count = neighbors_count(y,x)
+        count = neighbors_count(y, x)
         new_grid[y][x] = begin
           if cell.zero?
             [3].include?(count) ? 1 : 0
           else
-            [2,3].include?(count) ? 1 : 0
+            [2, 3].include?(count) ? 1 : 0
           end
         end
       end
@@ -32,10 +33,6 @@ class Life
   end
 
   private
-
-  def load_grid
-    Array.new(rows) { Array.new(cols, 0) }
-  end
 
   def neighbors(y, x)
     (-1..1).inject [] do |values, py|
@@ -50,5 +47,9 @@ class Life
       end
       values
     end
+  end
+
+  def load_grid
+    Array.new(rows) { Array.new(cols, 0) }
   end
 end
