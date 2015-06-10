@@ -1,0 +1,9 @@
+.grid
+	- for i in 0..(@rows - 1)
+		.row.row-no-padding
+			- for j in 0..(@cols - 1)
+				.col-lg-2.col-md-2.col-xs-2
+					- if  @grid and @grid[i][j] == 1
+						.cell.active.fadeIn row="#{i}" col="#{j}"
+					- else
+						.cell.fadeIn row="#{i}" col="#{j}"

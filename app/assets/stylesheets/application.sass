@@ -1,0 +1,116 @@
+@import bootstrap-sprockets
+@import bootstrap
+@import font-awesome
+
+html
+	position: relative
+	min-height: 100%
+
+body
+	font-family: 'Roboto', sans-seri
+	font-size: 15px
+	line-height: 1.6
+	background: #ede8de
+
+.container
+	margin: 3em auto 0em auto
+
+.row-no-padding
+	[class*="col-"] 
+		padding-left: 2px !important
+		padding-right: 2px !important
+
+.game
+	background: #dddddd
+	padding: 4px 5px 0 5px
+	margin: 20px 0
+
+.grid
+	margin: 0px 12px 
+
+.cell
+	cursor: pointer
+	background: #FFF
+	height: 54px
+	margin-bottom: 4px
+	color: #444
+	position: relative
+	-webkit-transition: all .3s ease
+	-moz-transition: all .3s ease
+	transition: all .3s ease
+		
+.active
+	background: #FF621B
+
+.cell:hover
+	background: #FF621B
+
+.clear
+	position: fixed
+	top: 10px
+	right: 10px
+	color: #FF621B
+	cursor: pointer
+	display: none
+
+.game-explanation
+	margin-top: 20px
+	font-size: 14px
+	text-align: justify
+	position: relative
+	-webkit-animation: pop-in-big 700ms ease 2s both
+	-moz-animation: pop-in-big 700ms ease 2s both
+	animation: pop-in-big 700ms ease 2s both
+	background: #FCF8EF
+	color: #666
+	padding: 18px
+	margin-top: 30px
+	height: 76px
+	box-sizing: border-box
+	border-radius: 3px 
+
+.btn 
+	-webkit-transition: background .2s, border .2s
+	transition: background .2s, border .2s
+	text-transform: uppercase
+	text-align: center
+	text-decoration: none
+	outline: 0
+	vertical-align: top
+	color: #273845
+	background: #fff
+	display: inline-block
+	border: 2px solid #273845
+	font-size: 13px
+	letter-spacing: .08em
+	line-height: 14px
+	padding: 10px 20px
+	border-radius: 0
+
+.btn:hover 
+	background: rgba(47, 151, 121, .4)
+
+.btn:focus 
+	outline: 0
+	-webkit-transition: background .1s, border .1s, -webkit-transform .1s
+	transition: background .1s, border .1s, transform .1s
+	background: rgba(47, 151, 121, .1)
+	border: 2px solid rgba(47, 151, 121, .7)
+	-webkit-transform: scale(0.99, .99)
+	-ms-transform: scale(0.99, .99)
+	transform: scale(0.99, .99)
+
+.btn::-moz-focus-inner 
+	border: 0
+	padding: 0
+
+@media only screen and (max-width:400px) 
+	.btn 
+		font-size: 12px
+		padding: 12px 18px 13px
+	
+footer 
+	position: absolute
+	bottom: 0
+	width: 100%
+	text-align: center
