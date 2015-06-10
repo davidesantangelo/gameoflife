@@ -1,7 +1,8 @@
 .clear
 	i.fa.fa-times.fa-2x
 
-p.lead.text-center Game Of Life
+p.lead.text-center 
+	a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_BLANK" Game Of Life
 
 .game
 	= render partial: 'grid'
@@ -9,10 +10,3 @@ p.lead.text-center Game Of Life
 .row
 	.col-md-6.col-md-offset-3
 		a#run.btn.btn-block.disabled Run
-
-.row
-	.col-md-12
-		.game-explanation
-		  | Click and highlight squares and 
-		  strong "Run"  
-		  | to make them live/dead.
