@@ -18,7 +18,7 @@
 $(function(){
   $("#run").click(function(e){
     var load = true;
-		var count = 1;
+    var count = 1;
 
     var cells = [];
     $('.active').each(function(){
@@ -41,15 +41,15 @@ $(function(){
 });
 
 $(function(){
-	$(".cell").click(function(){
-	  $('.clear').fadeIn();
-	  $('#run').removeClass('disabled');
-	  if(!$(this).hasClass("active")) {
-	    $(this).addClass("active");
-	  } else {
-	    $(this).removeClass("active");
-	  }
-	});
+  $(".cell").click(function(){
+    $('.clear').fadeIn();
+    $('#run').removeClass('disabled');
+    if(!$(this).hasClass("active")) {
+      $(this).addClass("active");
+    } else {
+      $(this).removeClass("active");
+    }
+  });
 });
 
 $(function(){
