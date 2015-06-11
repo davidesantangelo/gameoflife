@@ -3,10 +3,11 @@
 
 p.lead.text-center 
 	a href="http://en.wikipedia.org/wiki/Conway's_Game_of_Life" target="_BLANK" Game Of Life
+	
+.game-wrapper
+	.game
+		= render partial: 'grid'
 
-.game
-	= render partial: 'grid'
-
-.row
-	.col-md-6.col-md-offset-3
-		a#run.btn.btn-block.disabled Run
+	.row
+		.col-md-6.col-md-offset-3
+		  a#run.btn.btn-block.disabled Run

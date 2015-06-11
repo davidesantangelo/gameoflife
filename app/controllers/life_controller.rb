@@ -15,7 +15,6 @@ class LifeController < ApplicationController
       @@life.load cells
     end
     @grid = @@life.execute
-    @count = 1
   end
 
   private

@@ -20,10 +20,12 @@ body
 		padding-left: 2px !important
 		padding-right: 2px !important
 
-.game
-	background: #dddddd
-	padding: 4px 5px 0 5px
-	margin: 20px 0
+.game-wrapper
+	margin-bottom: 40px
+	.game
+		background: #dddddd
+		padding: 4px 5px 0 5px
+		margin: 20px 0
 
 .grid
 	margin: 0px 12px 
@@ -102,13 +104,20 @@ body
 	border: 0
 	padding: 0
 
-@media only screen and (max-width:400px) 
-	.btn 
-		font-size: 12px
-		padding: 12px 18px 13px
-	
 footer 
 	position: absolute
 	bottom: 0
 	width: 100%
 	text-align: center
+	
+.text-muted
+	font-size: 1em
+
+@media only screen and (max-width:400px) 
+	.btn 
+		font-size: 12px
+		padding: 12px 18px 13px
+
+	.text-muted
+		font-size: 0.8em
+	
