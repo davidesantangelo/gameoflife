@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(function(){
-  $("#run").click(function(e){
+  $(document.body).on('click', '#run', function(e){
     var load = true;
     var count = 1;
 
@@ -29,7 +29,13 @@ $(function(){
 
     (function loop() {
       e.preventDefault();	
-      $.post('/run', {load: load, cells: cells});
+
+      if (window.clear) {
+        window.clear = false;
+        return false;
+      }
+
+      $.post('/start', {load: load, cells: cells});
       $('#run').addClass('disabled').text(count);
       count ++;
       setTimeout(function(){
@@ -41,7 +47,7 @@ $(function(){
 });
 
 $(function(){
-  $(".cell").click(function(){
+  $(document.body).on('click', '.cell', function(){
     $('.clear').fadeIn();
     $('#run').removeClass('disabled');
     if(!$(this).hasClass("active")) {
@@ -53,7 +59,9 @@ $(function(){
 });
 
 $(function(){
-  $(".clear").click(function(){
-    window.location.reload();
+  $(document.body).on('click', '.clear', function(){
+    $(this).fadeOut();
+    window.clear = true;
+    $.post('/clear', {});
   });
 });

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :life, :path => "/" do
     collection do
-      post 'run' => 'life#run' 
+      post 'start' => 'life#start' 
+      post 'clear' => 'life#clear' 
     end
   end
 end
