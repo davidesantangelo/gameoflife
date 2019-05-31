@@ -29,7 +29,8 @@ class Life
         end
       end
     end
-    return @grid = new_grid
+    
+    @grid = new_grid
   end
 
   private
