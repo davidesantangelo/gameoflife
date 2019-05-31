@@ -82,7 +82,7 @@ GEM
     minitest (5.11.3)
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
-    pg (1.1.4)
+    pg (0.21.0)
     rack (1.6.11)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -193,7 +193,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
-  pg
+  pg (~> 0.18)
   rails (= 4.2.11)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
